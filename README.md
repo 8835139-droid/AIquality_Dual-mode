@@ -18,6 +18,7 @@
 
 本專案源自 [Williamtt/AIQuality](https://github.com/Williamtt/AIQuality.git)  
 使用 **VS Code + GPT5-CODEX** 編程開發。
+主要是新增了本地端模型的使用功能
 
 ![使用者介面](UI.png)
 
@@ -529,6 +530,7 @@ ollama --version
 - 若配備高效能顯示卡，則可選用更高階的 **Qwen2.5-VL:32B** 版本以提升精度。
 
 ---
+
 
 
 
