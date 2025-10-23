@@ -153,7 +153,8 @@ AIquality_Dual-mode/
 ├── rebar_inspection_tool.html  # 前端主頁面
 ├── inspection_types.json       # 檢查項目配置數據
 ├── server.js                   # Node.js 代理服務器
-├── config.js                   # 本地端模型設定
+├── config.js                   # 本地端Ollama配合使用之模型設定
+├── opencc.js                   # opencc-js 是業界最完整的繁簡轉換字典
 ├── package.json                # 專案依賴
 └── README.md                   # 專案說明文件
 ```
@@ -528,6 +529,7 @@ ollama --version
 - 若配備高效能顯示卡，則可選用更高階的 **Qwen2.5-VL:32B** 版本以提升精度。
 
 ---
+
 
 
 
