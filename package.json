@@ -1,7 +1,7 @@
 {
   "name": "rebar-inspection-tool",
   "version": "1.0.0",
-  "description": "AI驅動的鋼筋缺失檢查工具",
+  "description": "AI驅動的營建工程施工品質缺失檢查輔助生成助理",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -19,8 +19,11 @@
     "AI",
     "鋼筋檢查",
     "Claude",
-    "工程檢測"
+    "雲端工程檢測"
+    "Ollama",
+    "本地端工程檢測"
   ],
   "author": "AI Assistant",
   "license": "MIT"
 }
+
