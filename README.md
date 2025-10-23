@@ -155,8 +155,6 @@ AIquality_Dual-mode/
 ├── server.js                   # Node.js 代理服務器
 ├── config.js                   # 本地端模型設定
 ├── package.json                # 專案依賴
-├── Ollama.md                   # 本地端 AI 配置說明
-├── Claude.md                   # 雲端 Claude AI 技術文件
 └── README.md                   # 專案說明文件
 ```
 
@@ -530,6 +528,7 @@ ollama --version
 - 若配備高效能顯示卡，則可選用更高階的 **Qwen2.5-VL:32B** 版本以提升精度。
 
 ---
+
 
 
 
