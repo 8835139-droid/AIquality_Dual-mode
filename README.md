@@ -223,6 +223,16 @@ AIquality_Dual-mode/
 - 缺失項目高亮與標記  
 - 提供錯誤提示與解決建議
 
+## 🚀 AI模型外掛設定(config.js)
+```config.js
+//設定ollama 本地使用模型名稱,可依照個人設備規格使用更大參數規格的模型，例如qwen2.5vl:32b
+const LOCAL_MODEL = 'qwen2.5vl:7b';
+//const LOCAL_MODEL = '';
+//設定CLAUDE雲端使用模型名稱,可依照需求更換不同版本模型
+const CLAUDE_MODEL = 'claude-3-7-sonnet-20250219';
+//const CLAUDE_MODEL = 'claude-sonnet-4-5-20250929';
+```
+
 ---
 
 ## 🔒 安全說明
@@ -263,15 +273,7 @@ A：支援 JPG、PNG、GIF、WebP，建議小於 5MB。
 - 整體評估（影響程度與優先級）
 
 ---
-## 🚀 模型使用建議(config.js)
-```config.js
-//設定ollama 本地使用模型名稱,可依照個人設備規格使用更大參數規格的模型，例如qwen2.5vl:32b
-const LOCAL_MODEL = 'qwen2.5vl:7b';
-//const LOCAL_MODEL = '';
-//設定CLAUDE雲端使用模型名稱,可依照需求更換不同版本模型
-const CLAUDE_MODEL = 'claude-3-7-sonnet-20250219';
-//const CLAUDE_MODEL = 'claude-sonnet-4-5-20250929';
-```
+
 ## 🧩 故障排除
 
 ### 常見問題
@@ -427,6 +429,7 @@ Qwen使阿里巴巴的大語言開源模型，輸出格式常會有繁簡體的�
 - 若配備高效能顯示卡，則可選用更高階的 **Qwen2.5-VL:32B** 版本以提升精度。
 
 ---
+
 
 
 
