@@ -45,10 +45,9 @@
 
 ## 🚀 快速開始
 
-### 前置要求(本地端使用前須佈署,以Windows11為例)
+### 前置要求(本地端使用前後端套件佈署,以Windows11為例)
 
 - Node.js 18+
-- npm
   👉 [取得 Node.js 下載並安裝](https://nodejs.org/zh-tw) 
 - git
   👉 [取得 git下載並安裝](https://git-scm.com/install/windows)  
@@ -532,6 +531,7 @@ ollama --version
 - 若配備高效能顯示卡，則可選用更高階的 **Qwen2.5-VL:32B** 版本以提升精度。
 
 ---
+
 
 
 
