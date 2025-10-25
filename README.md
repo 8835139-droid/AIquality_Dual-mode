@@ -1,8 +1,8 @@
 # 🏗️ 施工品質檢查 - AI生成式輔助系統（雙模版本）
 
-1.本專案源自 [Williamtt/AIQuality](https://github.com/Williamtt/AIQuality.git) 
-2.後續使用 **VS Code + GPT5-CODEX** 做編程開發，主要是新增了本地端模型的使用功能。
-3.此為淡江大學 土木工程系 蔡明修教授指導之畢業專題。
+1. 本專案源自 [Williamtt/AIQuality](https://github.com/Williamtt/AIQuality.git) 
+2. 後續使用 **VS Code + GPT5-CODEX** 做編程開發，主要是新增了本地端模型的使用功能。
+3. 此為淡江大學 土木工程系 蔡明修教授指導之畢業專題。
 
 ## 📘 專案概述
 
@@ -433,6 +433,7 @@ Qwen使阿里巴巴的大語言開源模型，輸出格式常會有繁簡體的�
 - 若配備高效能顯示卡，則可選用更高階的 **Qwen2.5-VL:32B** 版本以提升精度。
 
 ---
+
 
 
 
