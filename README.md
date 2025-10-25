@@ -1,24 +1,18 @@
-# 🏗️ AI施工品質檢查系統 - 雙模版本
-
-> 本文件整合了主專案說明、Claude 雲端模式說明、 Ollama 本地端模式設定說明。
-
----
-
-## 📚 目錄
-
-1. [專案總覽與使用說明](#專案總覽與使用說明)
-2. [Claude 雲端模式說明](#claude-雲端模式說明)
-3. [Ollama 本地模式說明](#ollama-本地模式說明)
-
----
-
-## 🧱 專案總覽與使用說明
-
 # 🏗️ 施工品質檢查 - AI生成式輔助系統（雙模版本）
 
-本專案源自 [Williamtt/AIQuality](https://github.com/Williamtt/AIQuality.git)  
-使用 **VS Code + GPT5-CODEX** 編程開發。
-主要是新增了本地端模型的使用功能
+1.本專案源自 [Williamtt/AIQuality](https://github.com/Williamtt/AIQuality.git) 
+2.後續使用 **VS Code + GPT5-CODEX** 做編程開發，主要是新增了本地端模型的使用功能。
+3.此為淡江大學 土木工程系 蔡明修教授指導之畢業專題。
+
+## 📘 專案概述
+
+這是一個基於 AI 生成式的工程品質檢查工具，專門用於分析工程照片並識別缺失項目。
+
+1. 系統僅支援基礎土木工程檢查類型（鋼筋），並提供智能化的缺失識別和改善建議。  
+2. 系統提供新增、編輯、刪除檢查類型的功能。
+3. 系統支援雲端AI與本地端AI雙重模式供使用。
+
+## 🧱 專案總覽與使用說明
 
 ![使用者介面](UI.png)
 
@@ -56,7 +50,7 @@
 - Claude API 密鑰（需付費）  
   👉 [取得 API Key](https://console.anthropic.com/login?selectAccount=true&returnTo=%2Fsettings%2Fkeys%3F)
 
-本地端 AI 模式（請參考 `Ollama.md`）：
+本地端 AI 模式：
 - [Ollama](https://ollama.com/download)  
 - [Qwen2.5-VL:7B 模型](https://ollama.com/library/qwen2.5vl:7b)
 
@@ -84,7 +78,10 @@
 ```bash
 npm run dev
 ```
-
+## 服務器訪問
+- 開發/生產環境：`http://localhost:3000`
+- 主要頁面：`rebar_inspection_tool.html`
+---
 ---
 
 ## 📋 檢查項目（可新增 / 編輯 / 刪除）
@@ -125,7 +122,7 @@ npm run dev
 }
 ```
 
-![檢查表格式](鋼筋檢查表.png)
+![檢查表格式與JSON 結構格式需對應](鋼筋檢查表.png)
 
 ---
 
@@ -143,112 +140,24 @@ npm run dev
 
 - **前端**：HTML、CSS、JavaScript  
 - **後端**：Node.js + Express  
-- **AI 模型**：Claude-3.7-Sonnet（雲端）／Ollama + Qwen2.5-VL:7B（本地端）  
+- **預設 AI 模型**：Claude-3.7-Sonnet（雲端）／Ollama + Qwen2.5-VL:7B（本地端）  
 - **代理服務**：解決 CORS 跨域問題
 
 ---
 
-## 📂 專案結構
+## 📂 專案核心文件結構
 
 ```
 AIquality_Dual-mode/
 ├── rebar_inspection_tool.html  # 前端主頁面
 ├── inspection_types.json       # 檢查項目配置數據
 ├── server.js                   # Node.js 代理服務器
-├── config.js                   # 本地端Ollama配合使用之模型設定
+├── config.js                   # 更改AI模型配置設定
 ├── opencc.js                   # opencc-js 是業界最完整的繁簡轉換字典
 ├── package.json                # 專案依賴
+├── package-lock.json           # 專案鎖定依賴
 └── README.md                   # 專案說明文件
 ```
-
----
-
-## 🔒 安全說明
-
-- API 密鑰僅於伺服端儲存，前端不暴露。  
-- 上傳圖片僅作分析用途，不會被儲存。  
-- 全部通信均採用 HTTPS 加密。
-
----
-
-## 🐛 常見問題
-
-**Q：遇到 CORS 錯誤怎麼辦？**  
-A：請確保使用 `npm start` 啟動服務器，而非直接開啟 HTML 文件。
-
-**Q：AI 分析失敗？**  
-A：檢查網路連線、API 密鑰設定，或使用較小的圖片檔案。
-
-**Q：支援哪些圖片格式？**  
-A：支援 JPG、PNG、GIF、WebP，建議小於 5MB。
-
----
-
-
-
-
----
-
-## ☁️ Claude 雲端模式說明
-
-# 🧠 CLAUDE.md
-
-This file provides guidance to **Claude Code (claude.ai/code)** when working with code in this repository.
-
----
-
-## 📘 項目概述
-
-這是一個基於 **Claude AI** 的工程品質檢查工具，專門用於分析工程照片並識別缺失項目。
-
-1. 系統支援基礎土木工程檢查類型（鋼筋），並提供智能化的缺失識別和改善建議。  
-2. 系統提供新增、編輯、刪除檢查類型的功能。
-
----
-
-## ⚙️ 開發與部署命令
-
-### 基本命令
-
-```bash
-# 安裝依賴
-npm install
-
-# 啟動開發服務器（自動重啟）
-npm run dev
-
-# 啟動生產服務器
-npm start
-```
-
-### 服務器訪問
-- 開發/生產環境：`http://localhost:3000`
-- 主要頁面：`rebar_inspection_tool.html`
-
-> 🚫 此項目目前沒有配置測試框架，所有功能測試需要手動進行。
-
----
-
-## 🧩 代碼架構
-
-### 技術棧
-- **前端**：HTML、CSS、JavaScript  
-- **後端**：Node.js + Express  
-- **AI 模型**：Claude 3.7 Sonnet (`claude-3-7-sonnet-20250219`)  
-- **數據儲存**：本地 JSON 檔案 (`inspection_types.json`)
-
-### 核心文件結構
-```
-AIquality_Dual-mode/
-├── rebar_inspection_tool.html   # 主要前端頁面
-├── server.js                    # Express 代理服務器
-├── inspection_types.json        # 檢查項目配置數據
-├── package.json                 # 項目依賴
-└── README.md                    # 項目說明
-```
-
----
-
 ## 🏗️ 系統架構層次
 
 ### 1️⃣ 前端層 (`rebar_inspection_tool.html`)
@@ -258,7 +167,6 @@ AIquality_Dual-mode/
   - 動態檢查項目載入  
   - 圖片上傳與預覽  
   - AI 分析結果格式化顯示  
-- **安全機制**：輸入驗證、XSS 防護、API 密鑰格式驗證
 
 ### 2️⃣ API 代理層 (`server.js`)
 - **主要路由**：
@@ -274,6 +182,9 @@ AIquality_Dual-mode/
   - 動態 Import 支援
 
 ### 3️⃣ 數據層 (`inspection_types.json`)
+  - 新增檢查表
+  - 編輯檢查表(新增/編輯/刪除)
+  - 上述動作會動態改變inspection_types.json內容
 ```json
 {
   "inspectionTypes": {
@@ -292,21 +203,17 @@ AIquality_Dual-mode/
   "currentType": "當前選中的檢查類型"
 }
 ```
-
 ### 4️⃣ AI 整合層
-- **Claude API 整合**：
-  - 模型版本：`claude-3-7-sonnet-20250219`
+- **雲端Claude API 及 本地端 Ollama API 雙模介面 **：
   - 智能項目選擇邏輯
   - 四階段檢查流程（照片分析 → 項目選擇 → 標準對照 → 缺失識別）
   - 結構化輸出格式
-
 ---
-
 ## 🧱 核心功能模組
 
 ### 1️⃣ 檢查類型管理
 - 動態載入 JSON 檔案中的檢查類型  
-- 支援新增、編輯、刪除檢查類型（CRUD）  
+- 支援新增、編輯、刪除檢查類型（浮動框架）  
 - 解析檢查表圖片，自動生成檢查項目
 
 ### 2️⃣ 圖片分析引擎
@@ -324,22 +231,24 @@ AIquality_Dual-mode/
 
 ---
 
-## ⚙️ 開發注意事項
+## 🔒 安全說明
 
-### 安全考量
-- API 密鑰由伺服器端代理保護，避免前端洩露  
-- 所有輸入皆經驗證與清理  
-- XSS 防護：採用 `sanitizeHTML()`、`safeSetInnerHTML()`
+- Claude API 密鑰僅於伺服端儲存，前端不暴露。  
+- 上傳圖片僅作分析用途，不會被儲存。  
+- 全部通信均採用 HTTPS 加密。
 
-### 性能優化
-- 記憶體快取（5 分鐘 TTL）  
-- 支援多圖片格式（JPG, PNG, GIF, WebP）  
-- 自動錯誤恢復與錯誤分類
+---
 
-### 擴展性設計
-- 模組化架構、前後端分離  
-- 可透過 JSON 輕鬆添加新檢查類型  
-- AI 提示詞優化文件：`prompt_comparison.md`
+## 🐛 常見問題
+
+**Q：遇到 CORS 錯誤怎麼辦？**  
+A：請確保使用 `npm start` 啟動服務器，而非直接開啟 HTML 文件。
+
+**Q：AI 分析失敗？**  
+A：檢查網路連線、API 密鑰設定，或使用較小的圖片檔案。
+
+**Q：支援哪些圖片格式？**  
+A：支援 JPG、PNG、GIF、WebP，建議小於 5MB。
 
 ---
 
@@ -360,7 +269,15 @@ AIquality_Dual-mode/
 - 整體評估（影響程度與優先級）
 
 ---
-
+## 🚀 模型使用建議(config.js)
+```config.js
+//設定ollama 本地使用模型名稱,可依照個人設備規格使用更大參數規格的模型，例如qwen2.5vl:32b
+const LOCAL_MODEL = 'qwen2.5vl:7b';
+//const LOCAL_MODEL = '';
+//設定CLAUDE雲端使用模型名稱,可依照需求更換不同版本模型
+const CLAUDE_MODEL = 'claude-3-7-sonnet-20250219';
+//const CLAUDE_MODEL = 'claude-sonnet-4-5-20250929';
+```
 ## 🧩 故障排除
 
 ### 常見問題
@@ -375,28 +292,10 @@ AIquality_Dual-mode/
 
 ---
 
-## 🚀 部署建議
+# 💻 Ollama 本地模式說明(源專案擴增功能)
 
-### 生產環境
-- 使用 `PM2` 或類似工具管理 Node.js 進程。  
-- 配置 `Nginx` 作為反向代理。  
-- 設定環境變數以管理 API Key。  
-- 啟用日誌與錯誤追蹤機制。
-
-### 安全強化
-- 啟用 HTTPS  
-- 設置速率限制（Rate Limiting）  
-- 輸入驗證與輸出編碼  
-- 定期更新依賴套件
-
----
-
-
-
-
----
-
-## 💻 Ollama 本地模式說明
+1.基於源專案僅使用商業付費功能的CLAUDE API而擴充 [Williamtt/AIQuality](https://github.com/Williamtt/AIQuality.git) 
+2.擴增本地端模式的目的是基於開源免付費模型的使用，不用對外連網，更具備隱私性。
 
 # 🦙 Ollama 本地端 AI 模型執行環境
 
@@ -417,7 +316,7 @@ Ollama 就像是「本地端的 ChatGPT 執行器」，讓你不用上網，也�
 ## ⚙️ 二、主要功能
 
 - **離線運行模型**：模型下載後可離線使用，不需 API key。
-- **多模型支援**：可同時安裝多個模型。
+- **多模型支援**：可隨時更換不同模型(略具備實驗性質)。
 
 ---
 
@@ -476,6 +375,9 @@ ollama --version
 ---
 
 ## 🧠 四、本專案採用 AI 模型：`Qwen2.5-VL:7B`
+Qwen使阿里巴巴的大語言開源模型，輸出格式常會有繁簡體的問題產生
+###💡解決方式
+-opencc.js : opencc-js 是業界最完整的繁簡轉換字典
 
 ### Qwen2.5-VL:7B 多模態視覺理解模型簡介
 
@@ -531,6 +433,7 @@ ollama --version
 - 若配備高效能顯示卡，則可選用更高階的 **Qwen2.5-VL:32B** 版本以提升精度。
 
 ---
+
 
 
 
