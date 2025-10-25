@@ -136,7 +136,7 @@ npm run dev
 
 - **前端**：HTML、CSS、JavaScript  
 - **後端**：Node.js + Express  
-- **預設 AI 模型**：Claude-3.7-Sonnet（雲端）／Ollama + Qwen2.5-VL:7B（本地端）  
+- **預設 AI 模型**：Claude-3.7-Sonnet（雲端）／Ollama框架 + Qwen2.5-VL:7B（本地端）  
 
 ---
 
@@ -430,6 +430,7 @@ Qwen使阿里巴巴的大語言開源模型，輸出格式常會有繁簡體的�
 - 若配備高效能顯示卡，則可選用更高階的 **Qwen2.5-VL:32B** 版本以提升精度。
 
 ---
+
 
 
 
