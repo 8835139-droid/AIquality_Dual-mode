@@ -130,6 +130,33 @@ npm run dev
 5. 查看 AI 回傳的報告與改善建議。
 ## 🛠️ 使用者與系統運作模式
 ![使用方式](專案架構圖.png)
+1️⃣ **User → Browser**：操作介面  
+   > 使用者於前端網頁上執行操作（上傳照片、選擇檢查項目等）
+
+2️⃣ **Browser → Server**：API 請求  
+   > 前端透過 HTTP API 將使用者操作轉送至伺服器端
+
+3️⃣ **Server → Data**：讀 / 寫 檢查資料  
+   > 伺服器讀取或更新本地 JSON 資料庫（inspection_types.json）
+
+4️⃣ **Server → LocalAI**：本地 AI 推理（Ollama / Qwen）  
+   > 若使用內部模型，伺服器將資料送入本地 AI 引擎進行推理
+
+4️⃣ **Server → Claude**：雲端 AI 推理（Claude API）  
+   > 若設定為外部模型，伺服器轉送至 Claude 雲端服務進行分析
+
+5️⃣ **LocalAI → Server**：回傳本地 AI 結果  
+   > 本地模型完成推理後回傳結果給伺服器
+
+5️⃣ **Claude → Server**：回傳雲端 AI 結果  
+   > Claude 雲端返回分析結果至伺服器
+
+6️⃣ **Server → Browser**：回傳分析結果  
+   > 伺服器整合結果後傳回前端
+
+7️⃣ **Browser → User**：顯示結果與建議  
+   > 前端介面顯示 AI 分析報告與改善建議
+
 ---
 
 ## 🔧 技術架構
@@ -430,6 +457,7 @@ Qwen使阿里巴巴的大語言開源模型，輸出格式常會有繁簡體的�
 - 若配備高效能顯示卡，則可選用更高階的 **Qwen2.5-VL:32B** 版本以提升精度。
 
 ---
+
 
 
 
