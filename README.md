@@ -39,7 +39,7 @@
 
 ## 🚀 快速開始
 
-### 前置要求(本地端使用前後端套件佈署,以Windows11為例)
+### 前置要求(本系統使用前，電腦必須事先安裝的軟體,以Windows11為例)
 
 - Node.js 18+
   👉 [取得 Node.js 下載並安裝](https://nodejs.org/zh-tw) 
@@ -48,7 +48,7 @@
 
 雲端 AI 模式：
 - Claude API 密鑰（需付費）  
-  👉 [取得 API Key](https://console.anthropic.com/login?selectAccount=true&returnTo=%2Fsettings%2Fkeys%3F)
+  👉 [取得 API Key](https://console.anthropic.com/)
 
 本地端 AI 模式：
 - [Ollama](https://ollama.com/download)  
@@ -453,6 +453,7 @@ Qwen使阿里巴巴的大語言開源模型，輸出格式常會有繁簡體的�
 - 若配備高效能顯示卡，則可選用更高階的 **Qwen2.5-VL:32B** 版本以提升精度。
 
 ---
+
 
 
 
